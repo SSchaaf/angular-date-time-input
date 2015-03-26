@@ -31,7 +31,7 @@ angular.module('ui.dateTimeInput', []).directive('dateTimeInput',
             var result = viewValue;
 
             if (viewValue) {
-              var momentValue = moment(viewValue);
+              var momentValue = moment(viewValue, attrs.dateTimeInput);
               if (momentValue.isValid()) {
                 controller.$setValidity(attrs.ngModel, true);
                 result = momentValue.format();
